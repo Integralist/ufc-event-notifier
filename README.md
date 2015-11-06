@@ -11,6 +11,6 @@
 ## Build
 
 ```bash
-GOOS=darwin GOARCH=386   go build ufc.go # 32 bit MacOSX
-GOOS=darwin GOARCH=amd64 go build ufc.go # 64 bit MacOSX
+GOOS=darwin GOARCH=386   go build -o ufc-386   ufc.go # 32 bit MacOSX
+GOOS=darwin GOARCH=amd64 go build -o ufc-amd64 ufc.go # 64 bit MacOSX
 ```
