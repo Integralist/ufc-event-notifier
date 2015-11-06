@@ -14,3 +14,9 @@
 GOOS=darwin GOARCH=386   go build -o ufc-386   ufc.go # 32 bit MacOSX
 GOOS=darwin GOARCH=amd64 go build -o ufc-amd64 ufc.go # 64 bit MacOSX
 ```
+
+## Execute
+
+```
+mv ./ufc /usr/local/bin # update $PATH reference
+```
