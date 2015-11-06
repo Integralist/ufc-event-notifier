@@ -19,4 +19,20 @@ GOOS=darwin GOARCH=amd64 go build -o ufc-amd64 ufc.go # 64 bit MacOSX
 
 ```
 mv ./ufc /usr/local/bin # update $PATH reference
+which ufc # /usr/local/bin/ufc
+ufc
+```
+
+## Launch
+
+Modify the `ufc-notifier.plist` file inside this repo and move it to:
+
+```
+/Library/LaunchAgents/ufc-notifier.plist
+```
+
+Then execute:
+
+```bash
+sudo launchctl load /Library/LaunchAgents/ufc-notifier.plist
 ```
