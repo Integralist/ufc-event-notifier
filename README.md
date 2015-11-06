@@ -20,7 +20,7 @@ GOOS=darwin GOARCH=amd64 go build -o ufc-amd64 ufc.go # 64 bit MacOSX
 ```
 mv ./ufc /usr/local/bin # update $PATH reference
 which ufc # /usr/local/bin/ufc
-ufc
+ufc & # run program in a background process
 ```
 
 ## Launch
