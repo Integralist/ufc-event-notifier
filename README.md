@@ -51,3 +51,11 @@ cd "$HOME/Library/LaunchAgents"
 launchctl unload ufc-notifier.plist
 rm -i ufc-notifier.plist
 ```
+
+### Let's get serious
+
+If you find the service isn't stopping, then it's time to get heavy handed...
+
+- Check the program is indeed handled by Launchd: `launchctl list | grep ufc`
+- Remove the program: `launchctl remove ufc-notifier`
+- Verify it's gone: `launchctl list | grep ufc`
