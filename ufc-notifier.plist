@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+  <dict>
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/> <!-- restart if program exits with status that isn't zero -->
+    </dict>
+
     <key>Label</key>
     <string>ufc-notifier</string>
 
-    <key>OnDemand</key>
-    <false/>
-
-    <key>UserName</key>
-    <string>anAppropriateUser</string>
-
-    <key>GroupName</key>
-    <string>anAppropriateGroup</string>
-
     <key>ProgramArguments</key>
     <array>
-            <string>/usr/local/bin/ufc</string>
+      <string>/usr/local/bin/ufc</string>
     </array>
-</dict>
+
+    <key>RunAtLoad</key>
+    <true/>
+  </dict>
 </plist>
 
