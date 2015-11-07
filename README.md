@@ -39,7 +39,7 @@ Then execute:
 
 ```bash
 cd "$HOME/Library/LaunchAgents"
-launchctl load /Library/LaunchAgents/ufc-notifier.plist
+launchctl load ufc-notifier.plist
 ```
 
 > Note: this has been tested with Mac OS X version: `10.11.1`
