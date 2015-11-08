@@ -22,7 +22,7 @@ func main() {
 	wg.Add(1)
 
 	c := cron.New()
-	c.AddFunc("@daily", check)
+	c.AddFunc("@every 8h30m", check)
 	c.Start()
 
 	wg.Wait()
@@ -64,23 +64,33 @@ func check() {
 			" ",
 		)
 
-		// fmt.Printf("%s - %s\n", event, date)
-
 		t, _ := time.Parse(standardDate, date)
 		daysAway := daysDiff(t, time.Now())
 
 		switch {
-		case daysAway == 7:
+		case withinAWeek(daysAway):
 			mack.Say(fmt.Sprintf("The UFC Event %s is coming up in a week", event))
 			mack.Notify(fmt.Sprintf("%s (%d days away)", date, daysAway), "UFC Event", event, "Ping")
-		case daysAway == 3:
+		case withinAFewDays(daysAway):
 			mack.Say(fmt.Sprintf("The UFC Event %s is coming up in a few days", event))
 			mack.Notify(fmt.Sprintf("%s (%d days away)", date, daysAway), "UFC Event", event, "Ping")
-		case daysAway == 0:
+		case startsToday(daysAway):
 			mack.Say(fmt.Sprintf("The UFC Event %s is TODAY!", event))
 			mack.Notify(fmt.Sprintf("%s (%d days away)", date, daysAway), "UFC Event", event, "Ping")
 		}
 	})
+}
+
+func withinAWeek(daysAway int) bool {
+	return daysAway <= 7 && daysAway > 3
+}
+
+func withinAFewDays(daysAway int) bool {
+	return daysAway <= 3 && daysAway > 0
+}
+
+func startsToday(daysAway int) bool {
+	return daysAway == 0
 }
 
 func invalid(e string) bool {
