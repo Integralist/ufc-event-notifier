@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Long running binary (written in Go) for Mac OS X that scraps the UFC website for the next main UFC event and triggers a native OS notification
+  Long running binary (written in Go) for Mac OS X that scrapes the UFC website for the next main UFC event and triggers a native OS notification
 </p>
 
 ## Build
